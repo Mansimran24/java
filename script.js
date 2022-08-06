@@ -112,10 +112,10 @@ function validateRequired(el) {
   }
   function validateuname() {
     var uname = document.getElementById('uname');
-    const username = uname.value.trim();
+    const username = uname.length >=5;
     var valid = username;
     if (!valid) {
-      setErrorMessage(uname, 'Please add a Username');
+      setErrorMessage(uname, 'Please add atleast 5 word Username');
     }
     return valid;
   }
@@ -123,12 +123,12 @@ function validateRequired(el) {
     var pwd = document.getElementById('pwd');
     var valid = pwd.value.length >=12;
     if (!valid) {
-      setErrorMessage(pwd, 'Please enter atleast 12 Character');
+      setErrorMessage(pwd, 'Please enter atleast 12 character which must have "# symbol');
     }
     return valid;
   }
   function validatecpwd() {
-    var cpwd = document.getElementById('pwd');
+    var cpwd = document.getElementById('cpwd');
     var valid = cpwd.value.length >=12;
     if (!valid) {
       setErrorMessage(cpwd, 'Password not matched');
@@ -139,7 +139,7 @@ function validateRequired(el) {
     var check = document.getElementById('accept-terms');
     var valid = check.checked = true;
     if (!valid) {
-      setErrorMessage(pwd, 'Kindly accept all the terms & services');
+      setErrorMessage(check, 'Kindly accept all the terms & services');
     }
     return valid;
   }
