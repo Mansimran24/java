@@ -119,17 +119,18 @@ function validateRequired(el) {
     }
     return valid;
   }
-  function validatepwd() {
+   function validatepwd() {
     var pwd = document.getElementById('pwd');
     var valid = pwd.value.length >=12;
     if (!valid) {
-      setErrorMessage(pwd, 'Please enter atleast 12 character which must have "# symbol');
+      setErrorMessage(pwd, 'Please enter atleast 12 character which must have # symbol');
     }
     return valid;
   }
   function validatecpwd() {
+    var pwd = document.getElementById('pwd');
     var cpwd = document.getElementById('cpwd');
-    var valid = cpwd.value = pwd.value;
+    var valid = cpwd.value == pwd.value;
     if (!valid) {
       setErrorMessage(cpwd, 'Password not matched');
     }
@@ -137,7 +138,7 @@ function validateRequired(el) {
   }
   function validatecheck() {
     var check = document.getElementById('accept-terms');
-    var valid = check.checked = true;
+    var valid = check.checked;
     if (!valid) {
       setErrorMessage(check, 'Kindly accept all the terms & services');
     }
