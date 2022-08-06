@@ -63,25 +63,25 @@ $(function () {
     }
 
 
-    // If the form did not validate, prevent it being submitted
-    if (!isFormValid) {                 // If isFormValid is not true
-      e.preventDefault();               // Prevent the form being submitted
+    
+    if (!isFormValid) {                 
+      e.preventDefault();              
     }
 
         if (unameValid && pwdValid && cpwdValid && acceptTermsValid && dateValid) {
             e.preventDefault();
-            $('#data tbody').append(`<tr><td>${$('#uname').val()}</td><td>${$('#pwd').val().length}</td><td>${$('#cpwd').val().length}</td><td>${$('#accept-terms').val()}</td><td>${$('#date').val().length}</td></tr>`)
-            $('th').removeClass('ascending descending'); //new row added, so the table isn't sorted anymore
+            $('#data tbody').append(`<tr><td>${$('#uname').val().length}</td><td>${$('#pwd').val().length}</td><td>${$('#cpwd').val().length}</td><td>${$('#accept-terms').val()}</td><td>${$('#date').val()}</td></tr>`)
+             
         }
     });
 
 
 
 function validateRequired(el) {
-    if (isRequired(el)) {                           // Is this element required?
-      var valid = !isEmpty(el);                     // Is value not empty (true / false)?
-      if (!valid) {                                 // If valid variable holds false
-        setErrorMessage(el, 'Field is required');  // Set the error message
+    if (isRequired(el)) {                           
+      var valid = !isEmpty(el);                     
+      if (!valid) {                                 
+        setErrorMessage(el, 'Field is required');  
       }
       return valid;                               
     }
@@ -102,7 +102,6 @@ function validateRequired(el) {
 
   function validateTypes(el) {
     if (!el.value) return true;                     
-    // Otherwise get the value from .data()
     var type = $(el).data('type') || el.getAttribute('type');
     if (typeof validateType[type] === 'function') { 
       return validateType[type](el);                
@@ -112,7 +111,7 @@ function validateRequired(el) {
   }
   function validateuname() {
     var uname = document.getElementById('uname');
-    const username = uname.length >=5;
+    const username = uname.value.length >=5;
     var valid = username;
     if (!valid) {
       setErrorMessage(uname, 'Please add atleast 5 word Username');
@@ -180,22 +179,8 @@ function validateRequired(el) {
 
   var validateType = {
    
-    number: function (el) {                                
-      var valid = /^\d+$/.test(el.value);                  
-      if (!valid) {
-        setErrorMessage(el, 'Please enter a valid number');
-      }
-      return valid;
-    },
-    date: function (el) {                                  
-     
-      var valid = /^(\d{2}\/\d{2}\/\d{4})|(\d{4}-\d{2}-\d{2})$/.test(el.value);
-      if (!valid) {                                       
-        setErrorMessage(el, 'Please enter a valid date'); 
-      }
-      return valid;                                        
-    }
+   
+    
   };
 
 }()); 
-
