@@ -129,7 +129,7 @@ function validateRequired(el) {
   }
   function validatecpwd() {
     var cpwd = document.getElementById('cpwd');
-    var valid = cpwd.value.length >=12;
+    var valid = cpwd.value = pwd.value;
     if (!valid) {
       setErrorMessage(cpwd, 'Password not matched');
     }
@@ -140,6 +140,14 @@ function validateRequired(el) {
     var valid = check.checked = true;
     if (!valid) {
       setErrorMessage(check, 'Kindly accept all the terms & services');
+    }
+    return valid;
+  }
+  function validatedate() {
+    var date = document.getElementById('date');
+    var valid = date.value.trim();
+    if (!valid) {
+      setErrorMessage(date, 'Must enter a valid date');
     }
     return valid;
   }
@@ -171,20 +179,20 @@ function validateRequired(el) {
 
   var validateType = {
    
-    number: function (el) {                                // Create number() method
-      var valid = /^\d+$/.test(el.value);                  // Store result of test in valid
+    number: function (el) {                                
+      var valid = /^\d+$/.test(el.value);                  
       if (!valid) {
         setErrorMessage(el, 'Please enter a valid number');
       }
       return valid;
     },
-    date: function (el) {                                  // Create date() method
-      // Store result of test in valid
+    date: function (el) {                                  
+     
       var valid = /^(\d{2}\/\d{2}\/\d{4})|(\d{4}-\d{2}-\d{2})$/.test(el.value);
-      if (!valid) {                                        // If the value of valid is not true
-        setErrorMessage(el, 'Please enter a valid date');  // Set error message
+      if (!valid) {                                       
+        setErrorMessage(el, 'Please enter a valid date'); 
       }
-      return valid;                                        // Return the valid variable
+      return valid;                                        
     }
   };
 
