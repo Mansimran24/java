@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mansimran Kaur" />
+    <title>Final Exam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+   
+    <div>
+        <form action="" method="post">
+            <fieldset>
+                <div>
+                    <label for="uname">Username: </label>
+                    <input id="uname" name="uname" type="text" >
+                </div>
+                <div>
+                    <label for="pwd">Password: </label>
+                    <input id="pwd" name="pwd" type="password">
+                </div>
+                <div>
+                    <label for="cpwd">Confirm Password: </label>
+                    <input id="cpwd" name="cpwd" type="password">
+                </div>
+
+                <div>
+                    <label for="accept-terms">Accept all of the terms and services </label>
+                    <input id="accept-terms" name="accept-terms" type="checkbox">
+                </div>
+                <div>
+                    <label for="date">Date of Birth</label>
+                    <input id="date" name="date" type="date">
+                </div>
+                <div>
+                    <input type="submit" value="Sign Up" >
+                </div>
+            </fieldset>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <table id="data">
+        <thead>
+            <th data-order="alphabetical">Userame</th>
+                <th data-order="number">Password Length</th>
+                <th data-order="date">Date of Birth</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script type="text/javascript" src="https://releases.jquery.com/git/jquery-git.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
