@@ -70,7 +70,7 @@ $(function () {
 
         if (unameValid && pwdValid && cpwdValid && acceptTermsValid && dateValid) {
             e.preventDefault();
-            $('#data tbody').append(`<tr><td>${$('#uname').val().length}</td><td>${$('#pwd').val().length}</td><td>${$('#cpwd').val().length}</td><td>${$('#accept-terms').val()}</td><td>${$('#date').val()}</td></tr>`)
+            $('#data tbody').append(`<tr><td>${$('#uname').val()}</td><td>${$('#pwd').val().length}</td><td>${$('#date').val()}</td></tr>`)
              
         }
     });
@@ -147,7 +147,7 @@ function validateRequired(el) {
     var date = document.getElementById('date');
     var valid = date.value.trim();
     if (!valid) {
-      setErrorMessage(date, 'Must enter a valid date');
+      setErrorMessage(date, 'Must not be empty');
     }
     return valid;
   }
